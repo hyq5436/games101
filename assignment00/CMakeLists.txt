@@ -1,6 +1,7 @@
 # target
 set(TARGET_NAME Transformation)
 
+# requeriment
 find_package(Eigen3 REQUIRED)
 
 # add the executable
@@ -19,10 +20,10 @@ target_include_directories(${TARGET_NAME}
 set(GCC_UNDEFINED_FLAG "-fsanitize=undefined")
 
 # compile options
-# target_compile_options(${TARGET_NAME} PUBLIC ${GCC_UNDEFINED_FLAG})
+target_compile_options(${TARGET_NAME} PUBLIC ${GCC_UNDEFINED_FLAG})
 
 # link options
-#target_link_options(${TARGET_NAME} PUBLIC ${GCC_UNDEFINED_FLAG})
+target_link_options(${TARGET_NAME} PUBLIC ${GCC_UNDEFINED_FLAG})
 
 # link dependency
 target_link_libraries(${TARGET_NAME} PUBLIC ${CMAKE_THREAD_LIBS_INIT})
